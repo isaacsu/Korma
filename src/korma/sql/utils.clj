@@ -62,3 +62,11 @@
 
 (defn vconcat [v1 v2]
   (vec (concat v1 v2)))
+
+;;*****************************************************
+;; clob-utils
+;;*****************************************************
+
+(defn clob-to-string [clob]
+  (with-open [rdr (java.io.BufferedReader. (.getCharacterStream clob))]
+    (apply str (line-seq rdr))))
