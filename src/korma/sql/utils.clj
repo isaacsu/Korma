@@ -67,6 +67,6 @@
 ;; clob-utils
 ;;*****************************************************
 
-(defn clob-to-string [clob]
+(defn clob-to-str [clob]
   (with-open [rdr (java.io.BufferedReader. (.getCharacterStream clob))]
     (apply str (line-seq rdr))))
